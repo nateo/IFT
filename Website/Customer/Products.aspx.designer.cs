@@ -10,24 +10,33 @@
 namespace Website.Admin {
     
     
-    public partial class Discounts {
+    public partial class Products {
         
         /// <summary>
-        /// GridView1 control.
+        /// panelProductNavigation control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Panel panelProductNavigation;
         
         /// <summary>
-        /// sdsDiscounts control.
+        /// CategoriesRepeater control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.SqlDataSource sdsDiscounts;
+        protected global::System.Web.UI.WebControls.Repeater CategoriesRepeater;
+        
+        /// <summary>
+        /// Panel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
     }
 }

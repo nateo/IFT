@@ -39,16 +39,29 @@
                         <asp:Menu ID="navigationmenu" runat="server" CssClass="menu" EnableViewState="false"
                             IncludeStyleBlock="false" Orientation="horizontal">
                             <Items>
-                                <asp:MenuItem NavigateUrl="~/default.aspx" Text="home" />
-                                <asp:MenuItem NavigateUrl="~/about.aspx" Text="about" />
+                                <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" />
+                                <asp:MenuItem NavigateUrl="~/About.aspx" Text="About" />
                             </Items>
                         </asp:Menu>
                     </AnonymousTemplate>
+                    <RoleGroups>
+                        <asp:RoleGroup Roles="Admin">
+                            <ContentTemplate>
+                                <asp:Menu ID="navigationmenu" runat="server" CssClass="menu" EnableViewState="false"
+                                    IncludeStyleBlock="false" Orientation="horizontal">
+                                    <Items>
+                                        <asp:MenuItem NavigateUrl="~/Admin/Discounts.aspx" Text="Discounts" />
+                                    </Items>
+                                </asp:Menu>
+                            </ContentTemplate>
+                        </asp:RoleGroup>
+                    </RoleGroups>
                 </asp:LoginView>
             </div>
         </div>
         <div class="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+            </asp:ContentPlaceHolder>
         </div>
         <div class="clear">
         </div>
