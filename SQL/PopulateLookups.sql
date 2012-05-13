@@ -9,6 +9,8 @@ values (1, 'Horizonal', ((select max([order]) from subcategory) + 1))
 
 truncate table products
 insert into Products ([Description], ProductNumber, ListPrice, CategoryID, subCategoryID, ModifiedBy)
-values('10 x 20', '1234', 10, 1, 1, 'nate')
+values('14 gallon 15" x 15" x 15"', '151515', 67.52, 1, 1, 'nate')
 insert into Products ([Description],ProductNumber, ListPrice, CategoryID, subCategoryID, ModifiedBy)
-values('10 x 20', '2345', 10, 1, 2, 'nate')
+values('15 gallon 18.5" x 15" x 15"', '181513', 52.99, 1, 1, 'nate')
+insert into Products ([Description],ProductNumber, ListPrice, CategoryID, subCategoryID, ModifiedBy)
+values('29 gallon', '222300', 121.34, 1, 2, 'nate')
