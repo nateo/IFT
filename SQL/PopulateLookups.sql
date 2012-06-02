@@ -14,3 +14,7 @@ insert into Products ([Description],ProductNumber, ListPrice, CategoryID, subCat
 values('15 gallon 18.5" x 15" x 15"', '181513', 52.99, 1, 1, 'nate')
 insert into Products ([Description],ProductNumber, ListPrice, CategoryID, subCategoryID, ModifiedBy)
 values('29 gallon', '222300', 121.34, 1, 2, 'nate')
+
+truncate table discounts
+insert into Discounts (RoleId, DiscountPercent, ModifiedDate, ModifiedBy)
+values ('E102CF8C-29D7-4312-B04C-797E35DB46C3', .10, GETDATE(), 'nate')
