@@ -8,3 +8,8 @@ D:\Github\Project2\Website\bin\Website.pdb
 D:\Github\Project2\Website\obj\Release\ResolveAssemblyReference.cache
 D:\Github\Project2\Website\obj\Release\Website.dll
 D:\Github\Project2\Website\obj\Release\Website.pdb
+C:\github\IFT\Website\bin\Website.dll
+C:\github\IFT\Website\bin\Website.pdb
+C:\github\IFT\Website\obj\Release\ResolveAssemblyReference.cache
+C:\github\IFT\Website\obj\Release\Website.dll
+C:\github\IFT\Website\obj\Release\Website.pdb

@@ -20,8 +20,7 @@
             <div class="loginDisplay">
                 <asp:LoginView ID="HeadLoginView" runat="server" EnableViewState="false">
                     <AnonymousTemplate>
-                        [ <a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server">Log In</a>
-                        ]
+                        [ <a href="~/Account/Login.aspx" id="HeadLoginStatus" runat="server">Log In</a> ]
                     </AnonymousTemplate>
                     <LoggedInTemplate>
                         Welcome <span class="bold">
@@ -45,12 +44,15 @@
                         </asp:Menu>
                     </AnonymousTemplate>
                     <RoleGroups>
-                        <asp:RoleGroup Roles="Admin">
+                        <asp:RoleGroup Roles="Administrators">
                             <ContentTemplate>
                                 <asp:Menu ID="navigationmenu" runat="server" CssClass="menu" EnableViewState="false"
                                     IncludeStyleBlock="false" Orientation="horizontal">
                                     <Items>
+                                        <asp:MenuItem NavigateUrl="~/Default.aspx" Text="Home" />
+                                        <asp:MenuItem NavigateUrl="~/Admin/AdjustPrices.aspx" Text="Adjust Prices" />
                                         <asp:MenuItem NavigateUrl="~/Admin/Discounts.aspx" Text="Discounts" />
+                                        <asp:MenuItem NavigateUrl="~/Admin/Products.aspx" Text="Products" />
                                     </Items>
                                 </asp:Menu>
                             </ContentTemplate>
