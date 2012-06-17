@@ -9,54 +9,57 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <div>
         <div>
-            <asp:Label ID="lblCategory" runat="server" Text="Category:" Width="132px"></asp:Label>
-            <asp:TextBox ID="txtCategory" runat="server" Width="128px"></asp:TextBox>
-            <asp:Button ID="btnAddCategory" runat="server" Text="Add" />
+            <div>
+                <div>
+                    <asp:Label ID="lblCategory" runat="server" Text="Category:" Width="132px"></asp:Label>
+                    <asp:TextBox ID="txtCategory" runat="server" Width="128px"></asp:TextBox>
+                    <asp:Button ID="btnAddCategory" runat="server" Text="Add" />
+                </div>
+                <div>
+                    <asp:GridView ID="gvCategories" runat="server" AllowPaging="True" AllowSorting="True"
+                        AutoGenerateColumns="False" DataKeyNames="CategoryID" DataSourceID="sdsCategories"
+                        OnSelectedIndexChanged="gvCategories_SelectedIndexChanged">
+                        <Columns>
+                            <asp:CommandField ShowEditButton="True" ShowSelectButton="True" />
+                            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+                            <asp:BoundField DataField="Order" HeaderText="Order" SortExpression="Order" />
+                            <asp:BoundField DataField="DateAdded" HeaderText="Added On" SortExpression="DateAdded"
+                                ReadOnly="True" DataFormatString="{0:d}" />
+                            <asp:BoundField DataField="DateModified" HeaderText="Modified On" SortExpression="DateModified"
+                                ReadOnly="True" DataFormatString="{0:d}" />
+                        </Columns>
+                        <SelectedRowStyle BackColor="LightGray" />
+                    </asp:GridView>
+                </div>
+            </div>
+            <div>
+                <div>
+                    <asp:Label ID="lblSubcategoryName" runat="server" Text="Subcategory: " Visible="False"
+                        Width="132px"></asp:Label>
+                    <asp:TextBox ID="txtSubCategory" runat="server" Visible="False" Width="128px"></asp:TextBox>
+                    <asp:Button ID="btnAddSubCategory" runat="server" Text="Add" Visible="False" />
+                </div>
+                <div>
+                    <asp:GridView ID="gvSubcategory" runat="server" AllowPaging="True" AllowSorting="True"
+                        AutoGenerateColumns="False" DataKeyNames="SubcategoryID" DataSourceID="sdsSubcategory">
+                        <Columns>
+                            <asp:CommandField ShowEditButton="True" ShowSelectButton="True" />
+                            <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
+                            <asp:BoundField DataField="Order" HeaderText="Order" SortExpression="Order" />
+                            <asp:BoundField DataField="DateAdded" HeaderText="Added On" SortExpression="DateAdded"
+                                DataFormatString="{0:d}" ReadOnly="True" />
+                            <asp:BoundField DataField="DateModified" HeaderText="Modified On" SortExpression="DateModified"
+                                ReadOnly="True" DataFormatString="{0:d}" />
+                        </Columns>
+                        <SelectedRowStyle BackColor="LightGray" />
+                    </asp:GridView>
+                </div>
+            </div>
         </div>
-        <div>
-            <asp:GridView ID="gvCategories" runat="server" AllowPaging="True" AllowSorting="True"
-                AutoGenerateColumns="False" DataKeyNames="CategoryID" DataSourceID="sdsCategories"
-                OnSelectedIndexChanged="gvCategories_SelectedIndexChanged">
-                <Columns>
-                    <asp:CommandField ShowEditButton="True" ShowSelectButton="True" />
-                    <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-                    <asp:BoundField DataField="Order" HeaderText="Order" SortExpression="Order" />
-                    <asp:BoundField DataField="DateAdded" HeaderText="Added On" SortExpression="DateAdded"
-                        ReadOnly="True" DataFormatString="{0:d}" />
-                    <asp:BoundField DataField="DateModified" HeaderText="Modified On" SortExpression="DateModified"
-                        ReadOnly="True" DataFormatString="{0:d}" />
-                </Columns>
-                <SelectedRowStyle BackColor="LightGray" />
-            </asp:GridView>
-        </div>
-        <br />
-        <div>
-            <asp:Label ID="lblSubcategoryName" runat="server" Text="Subcategory: " Visible="False"
-                Width="132px"></asp:Label>
-            <asp:TextBox ID="txtSubCategory" runat="server" Visible="False" Width="128px"></asp:TextBox>
-            <asp:Button ID="btnAddSubCategory" runat="server" Text="Add" Visible="False" />
-        </div>
-        <div>
-            <asp:GridView ID="gvSubcategory" runat="server" AllowPaging="True" AllowSorting="True"
-                AutoGenerateColumns="False" DataKeyNames="SubcategoryID" DataSourceID="sdsSubcategory">
-                <Columns>
-                    <asp:CommandField ShowEditButton="True" ShowSelectButton="True" />
-                    <asp:BoundField DataField="Description" HeaderText="Description" SortExpression="Description" />
-                    <asp:BoundField DataField="Order" HeaderText="Order" SortExpression="Order" />
-                    <asp:BoundField DataField="DateAdded" HeaderText="Added On" SortExpression="DateAdded"
-                        DataFormatString="{0:d}" ReadOnly="True" />
-                    <asp:BoundField DataField="DateModified" HeaderText="Modified On" SortExpression="DateModified"
-                        ReadOnly="True" DataFormatString="{0:d}" />
-                </Columns>
-                <SelectedRowStyle BackColor="LightGray" />
-            </asp:GridView>
-        </div>
-        <br />
         <div>
             <asp:GridView ID="gvProducts" runat="server" AutoGenerateColumns="False" DataKeyNames="ProductID"
-                DataSourceID="sdsProducts" AllowPaging="True" AllowSorting="True" 
-                OnInit="gvProducts_Init" 
-                onselectedindexchanged="gvProducts_SelectedIndexChanged">
+                DataSourceID="sdsProducts" AllowPaging="True" AllowSorting="True" OnInit="gvProducts_Init"
+                OnSelectedIndexChanged="gvProducts_SelectedIndexChanged">
                 <Columns>
                     <asp:CommandField ShowEditButton="True" ShowSelectButton="True" />
                     <asp:BoundField DataField="ProductNumber" HeaderText="Part No." SortExpression="ProductNumber" />
@@ -80,18 +83,17 @@
                 <table>
                     <tr>
                         <td>
-                            Add/Change Picture:
-                            
-                        </td>
-                        <td>
+                            Update Picture:
                             <asp:FileUpload ID="fuPicture" runat="server" />
-                                <asp:Button ID="btnUpload" runat="server" Text="Upload" 
-                                onclick="btnUpload_Click" />
-
+                            <asp:Button ID="btnUpload" runat="server" Text="Upload" OnClick="btnUpload_Click" />
+                        </td>
+                        <td rowspan="2">
+                            <asp:GridView ID="GridView1" runat="server">
+                            </asp:GridView>
                         </td>
                     </tr>
                     <tr>
-                        <td colspan="2">
+                        <td>
                             <asp:Image ID="imageProduct" runat="server" Height="274px" Width="397px" />
                         </td>
                     </tr>
